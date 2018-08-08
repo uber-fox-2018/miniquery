@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/miniquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="eyed">eyed</div>
+    <div class="klass">klass</div>
+    <a href="#hello">click me</a>
+
+    <script>
+        console.log(SweetSelector.select('#eyed'))
+        console.log(SweetSelector.select('.klass'))
+        console.log(SweetSelector.select('a'))
+    </script>
+
+    <script>
+        // DOM.hide('.klass')
+        // DOM.show('.klass')
+        // DOM.addClass('.klass', 'shadi')
+        // DOM.removeClass('.klass', 'shadi')
+    </script>
+
+    <script>
+        EvenDispatcher.on('.klass', 'click', function() {
+            console.log('awesome')
+        })
+        EvenDispatcher.trigger('.klass', 'click')
+    </script>
+</body>
+</html>
