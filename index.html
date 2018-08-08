@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/miniquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="eyed">eyed</div>
+    <div class="klass">klass1</div>
+    <div class="klass">klass2</div>
+    <a href="#">click me</a><br>
+    <a href="#">another anchor</a><br>
+    <hr>
+    <label>Search repositories on GitHub</label>
+    <input id="search" type="text" placeholder="repository">
+    <br>
+    <button type="button" onclick="search()">Search</button>
+    <p>see result in console log</p>
+
+    <script>
+        function search() {
+            let input = SweetSelector.select('#search').value
+            AjaxWrapper.request({
+                url: `https://api.github.com/search/repositories?q=${input}`,
+                type: 'GET',
+                success: function (data) {
+                    console.log('=======> SUCCESS')
+                    console.log(data)
+                },
+                fail: function (data) {
+                    console.log('=======> FAILED')
+                    console.log(data)
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
