@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<body>
+    
+    <div id="eyed">eyed</div>
+    <div class ="klass">klass</div>
+    <a href ="#hello">click me</a>
+    <button class="btn1">Hide</button>
+    <button class="btn2">Show</button>
+</body>
+<script src="./lib/miniquery.js"></script>
+
+
+<script>
+    // console.log(SweetSelector.select("#eyed"));
+    // console.log(SweetSelector.select(".klass"));
+    // console.log(SweetSelector.select("a"));
+    // $(document).ready(function(){
+    //     $(".btn1").click(function(){
+    //         DOM.hide(".klass")
+    //     })
+    //     $(".btn2").click(function(){
+    //         DOM.show(".klass")
+    //     })
+    // })
+    // Dom.addClass(".klass","shad1");
+    // Dom.removeClass(".klass","shad1");
+
+    // EventDispatcher.on('.klass','click',function(){
+    //     console.log("awesome")
+    // })
+    // EventDispatcher.trigger('.klass','click')
+        miniquery('#eyed');
+        miniquery('.klass');
+        miniquery('a');
+        miniquery('.klass').hide();
+        miniquery('.klass').show();
+        miniquery('.klass').addClass('baru');
+        miniquery('.klass').removeClass('baru');
+        miniquery('.klass').on('shad', function () {
+            console.log('aweeeeesomeee')
+        })
+        miniquery('.klass').trigger('shad');
+</script>
+</html>
+
