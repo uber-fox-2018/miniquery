@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="./lib/miniquery.js"></script>
+</head>
+<body>
+
+    <div id="eyed">eyed</div>
+    <div class="klass">klass</div>
+    <a href="#hello">click me</a>
+    <br>
+    <h2>The data is: <span id="result"></span></h2>
+    <button>Refresh Data</button>
+
+<script>
+//release 0
+SweetSelector.select("#eyed")
+SweetSelector.select(".klass")
+SweetSelector.select("a")
+</script>
+
+<script>
+//release 1
+DOM.hide(".klass")
+DOM.show(".klass")
+DOM.addClass(".klass", "shadi")
+DOM.removeClass(".klass", "shadi")
+</script>
+
+<script>
+//release 2
+EventDispatcher.on(".klass", "click", function(){
+    console.log("awesome");
+})
+EventDispatcher.trigger(".klass", "click")
+</script>
+
+<script>
+//release 3
+AjaxWrapper.request({
+    url: "https://api.coindesk.com/v1/bpi/currentprice.json",
+    type: "GET",
+    success: function(data){
+        console.log(data)
+    },
+    fail: function(){
+        console.log("FAIL TO RETRIEVE THE DATA!")
+    }
+})
+</script>
+
+<script>
+//release 4
+let miniquery = new Miniquery('.klass')
+miniquery.hide()
+miniquery.show()
+miniquery.on('click', function(){
+    console.log('awesome!')
+})
+miniquery.trigger('click')
+miniquery.ajax({
+    url: "https://api.github.com/zen",
+    type: 'GET',
+    success: function(data){
+        console.log(data)
+    },
+    fail: function(){
+        console.log("FAIL TO RETRIEVE THE DATA!")
+    }
+})
+</script>
+
+</body>
+</html>
