@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="./lib/miniquery.js"></script>
+</head>
+<body>
+    <div id="eyed">eyed</div>
+    <div class="klass">klass</div>
+    <a href="#hello">click me</a>
+    <input type="submit" onclick="search()">
+    <script>
+        console.log(SweetSelector.select('#eyed'));
+        console.log(SweetSelector.select('.klass'));
+        console.log(SweetSelector.select('a'))
+        DOM.hide('.klass')
+        DOM.show('.klass')
+        DOM.addClass('.klass','shadie')
+        DOM.remove('.klass','shadie')
+        evenDispatcher.on('.klass', 'click', function() { console.log("awesome") });
+        evenDispatcher.trigger('.klass', 'click');
+
+        function search() {
+            
+            AjaxWrapper.request({
+                url: 'https://api.github.com/search/repositories?q=coba2',
+                type: 'GET',
+                succes: function() {
+                    
+                },
+
+                fail: function(){
+
+                }
+            })
+        }
+    </script>
+</body>
+</html>
