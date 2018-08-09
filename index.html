@@ -17,6 +17,10 @@
     DOM.show('.klass')
     DOM.addClass('.klass', 'shadi')
     DOM.removeClass('.klass', 'shadi')
+    EventDispatcher.on('.klass', 'click', ()=> {
+      console.log('awesome')
+    })
+    EventDispatcher.trigger('.klass', 'click')
     console.log(SweetSelector.select('#eyed'));
     console.log(SweetSelector.select('.klass'));
     console.log(SweetSelector.select('a'));
