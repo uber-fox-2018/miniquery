@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mini Query</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./lib/miniquery.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    
+</head>
+<body>
+    <h2>Mini Query</h2>
+    <div id="eyed">eyed</div>
+    <div class="klass">klass</div>
+    <a href="hello">click me</a>
+
+    <script>
+        //Release 0 : Selection Library
+        SweetSelector.select("#eyed")
+        SweetSelector.select(".klass")
+        SweetSelector.select("a")
+
+        //Release 1 : DOM Manipulation
+        DOM.hide(".klass")
+        DOM.show(".klass")
+        DOM.addClass(".klass", "shadi")
+        DOM.removeClass(".klass", "shadi")
+
+        //Release 2 : Event Dispatch
+        EventDispatcher.on('.klass', 'click', function() {
+            console.log('awesome')
+        })
+        EventDispatcher.trigger('.klass', 'click')
+
+    </script>
+</body>
+</html>
